@@ -4,7 +4,7 @@
 #include <string>  
 using namespace std;
 
-//definie those variables for your project
+//define those variables for your project
 const char* ssid = "YOUR_SSID";
 const char* password = "YOUR PSSWD";
 const char* mqtt_server = "YOUR_MQTT_SERVER_ADRESS";
@@ -14,7 +14,7 @@ const char* mqtt_server = "YOUR_MQTT_SERVER_ADRESS";
 #define MQTT_SERIAL_PUBLISH_CH "/Potager/"
 //#define MQTT_SERIAL_RECEIVER_CH "" // FOR THE MOMENT WE DONT RECEIVE ANY DATA
 
-// Définition of sensors MQTT topics path
+// Sensor path for MQTT topics
 #define MQTT_SERIAL_PUBLISH_SENSOR1 "/Potager/parcelle1/capteur-humidite1"
 #define MQTT_SERIAL_PUBLISH_SENSOR2 "/Potager/parcelle1/capteur-humidite2"
 #define MQTT_SERIAL_PUBLISH_SENSOR3 "/Potager/parcelle1/capteur-humidite3"
@@ -149,7 +149,7 @@ void loop() {
     publishSerialData(mun);
   }
 
-  // AFFICHAGE DES POSITIONS VOLETS ET ETATS LED
+  //Print sensors value 
   Serial.println(humidity_sensor1);
   mqtt_publish(MQTT_SERIAL_PUBLISH_SENSOR1, humidity_sensor1);
   Serial.println(humidity_sensor2);
